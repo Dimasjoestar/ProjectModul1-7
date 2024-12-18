@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form label {
+    display: block;
+    color: #333;
+    margin: 10px 0 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"],
+form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+form input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+form .button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+form .btn-simpan,
+form .btn-batal {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+form .btn-simpan {
+    background-color: #555;
+}
+
+form .btn-batal {
+    background-color: #ccc;
+}
+
+form .btn-simpan:hover {
+    background-color: #333;
+}
+
+form .btn-batal:hover {
+    background-color: #aaa;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tambah Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Tambah Data Kamar</h2>
+<form id="formKamar">
+    <label for="idKamar">ID Kamar:</label>
+    <input type="text" id="idKamar" name="idKamar" required>
+
+    <label for="gambarRuangan">Gambar Ruangan:</label>
+    <img src="kamarhotel" width="350px" height="200px" />
+
+    <label for="jenisKamar">Jenis Kamar:</label>
+    <input type="text" id="jenisKamar" name="jenisKamar" required>
+
+    <label for="harga">Harga:</label>
+    <input type="number" id="harga" name="harga" required>
+
+    <label for="fasilitasKamar">Fasilitas:</label>
+    <input type="text" id="fasilitasKamar" name="fasilitasKamar" required>
+
+    <button type="submit">Tambah Kamar</button>
+</form>
+
+<h2>Form Tambah Fasilitas</h2>
+<form id="formFasilitas">
+    <label for="idFasilitas">ID Fasilitas:</label>
+    <input type="text" id="idFasilitas" name="idFasilitas" required>
+
+    <label for="namaFasilitas">Nama Fasilitas:</label>
+    <input type="text" id="namaFasilitas" name="namaFasilitas" required>
+
+    <label for="deskripsiFasilitas">Deskripsi Fasilitas:</label>
+    <input type="text" id="deskripsiFasilitas" name="deskripsiFasilitas">
+
+    <label for="hargaWeekend">Harga Weekend:</label>
+    <input type="number" id="hargaWeekend" name="hargaWeekend">
+
+    <label for="hargaWeekday">Harga Weekday:</label>
+    <input type="number" id="hargaWeekday" name="hargaWeekday">
+
+    <label for="kuota">Kuota:</label>
+    <input type="number" id="kuota" name="kuota">
+
+    <label for="jamBuka">Jam Buka:</label>
+    <input type="time" id="jamBuka" name="jamBuka">
+
+    <label for="jamTutup">Jam Tutup:</label>
+    <input type="time" id="jamTutup" name="jamTutup">
+
+    <button type="submit">Tambah Fasilitas</button>
+</form>
+
+<script>
+document.getElementById('formKamar').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Data Kamar berhasil ditambahkan!');
+});
+
+document.getElementById('formFasilitas').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Data Fasilitas berhasil ditambahkan!');
+});
+</script>
+
+</body>
+</html>

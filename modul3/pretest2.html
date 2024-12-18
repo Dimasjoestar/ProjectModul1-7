@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+    <style>
+        /* Mengatur tampilan layar penuh dan memusatkan konten */
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* Memusatkan form login dan memberikan gaya */
+        #loginContainer {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        /* Styling untuk input dan button */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div id="loginContainer">
+    <h2>Login Form</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+        <input type="text" id="username" name="username" placeholder="Username"><br>
+        <input type="password" id="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Login">
+    </form>
+    <p id="message"></p>
+</div>
+
+<script>
+    function validateForm() {
+        // Mengambil nilai username dan password dari input
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Memeriksa apakah input username atau password kosong
+        if (username === "" || password === "") {
+            document.getElementById("message").textContent = "Username dan password tidak boleh kosong.";
+            document.getElementById("message").style.color = "red";
+            return false; // Mencegah form submit
+        }
+
+        // Validasi username dan password yang benar
+        var correctUsername = "admin";
+        var correctPassword = "1234";
+
+        // Mengecek apakah username dan password sesuai
+        if (username === correctUsername && password === correctPassword) {
+            document.getElementById("message").textContent = "Berhasil login!";
+            document.getElementById("message").style.color = "green";
+        } else {
+            document.getElementById("message").textContent = "Gagal login. Username atau password salah.";
+            document.getElementById("message").style.color = "red";
+        }
+
+        return false; // Mencegah form submit agar pesan bisa ditampilkan
+    }
+</script>
+
+</body>
+</html>

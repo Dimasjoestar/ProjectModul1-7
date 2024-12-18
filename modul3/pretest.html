@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form Validation</title>
+</head>
+<body>
+
+<h2>Login Form</h2>
+
+<form id="loginForm" onsubmit="return validateForm()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username"><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+    
+    <input type="submit" value="Login">
+</form>
+
+<p id="message"></p>
+
+<script>
+    function validateForm() {
+        // Mengambil nilai username dan password dari input
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Memeriksa apakah input username atau password kosong
+        if (username === "" || password === "") {
+            document.getElementById("message").textContent = "Username dan password tidak boleh kosong.";
+            document.getElementById("message").style.color = "red";
+            return false; // Mencegah form submit
+        }
+
+        // Validasi username dan password yang benar
+        var correctUsername = "admin";
+        var correctPassword = "1234";
+
+        // Mengecek apakah username dan password sesuai
+        if (username === correctUsername && password === correctPassword) {
+            document.getElementById("message").textContent = "Berhasil login!";
+            document.getElementById("message").style.color = "green";
+        } else {
+            document.getElementById("message").textContent = "Gagal login. Username atau password salah.";
+            document.getElementById("message").style.color = "red";
+        }
+
+        return false; // Mencegah form submit agar pesan bisa ditampilkan
+    }
+</script>
+
+</body>
+</html>

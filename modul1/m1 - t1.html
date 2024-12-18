@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Penginapan</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            width: 100px;
+            height: 70px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Data Kamar -->
+    <div class="section">
+        <h2>Data Kamar</h2>
+        <table>
+            <tr>
+                <th>ID Kamar</th>
+                <th>Gambar Ruangan</th>
+                <th>Jenis Kamar</th>
+                <th>Harga</th>
+                <th>Fasilitas</th>
+            </tr>
+            <tr>
+                <td>001</td>
+                <td><img src="kamarDeluxe" style="width: 150px; height: 100px;" alt="Gambar Kamar"></td>
+                <td>Deluxe</td>
+                <td>Rp 1,000,000</td>
+                <td>Wi-Fi, TV, AC</td>
+            </tr>
+            <tr>
+                <td>002</td>
+                <td><img src="kamarStandar" style="width: 150px; height: 100px;" alt="Gambar Kamar"></td>
+                <td>Standar</td>
+                <td>Rp 500,000</td>
+                <td>Wi-Fi, TV</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Data Fasilitas -->
+    <div class="section">
+        <h2>Fasilitas</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nama Fasilitas</th>
+                <th>Harga Weekend</th>
+                <th>Harga Weekday</th>
+                <th>Kuota</th>
+                <th>Jam Buka</th>
+                <th>Jam Tutup</th>
+            </tr>
+            <tr>
+                <td>F01</td>
+                <td>Kolam Renang</td>
+                <td>Rp 200,000</td>
+                <td>Rp 150,000</td>
+                <td>50</td>
+                <td>08:00</td>
+                <td>20:00</td>
+            </tr>
+            <tr>
+                <td>F02</td>
+                <td>Gym</td>
+                <td>Rp 100,000</td>
+                <td>Rp 80,000</td>
+                <td>30</td>
+                <td>06:00</td>
+                <td>22:00</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Data Pemesanan -->
+    <div class="section">
+        <h2>Data Pemesanan</h2>
+        <table>
+            <tr>
+                <th>ID Tanggal Pesan</th>
+                <th>Pemesan</th>
+                <th>Jenis Kamar</th>
+                <th>Check In</th>
+                <th>Check Out</th>
+                <th>Fasilitas (Ya/Tidak)</th>
+            </tr>
+            <tr>
+                <td>P001</td>
+                <td>Dimas Nurdiansyah</td>
+                <td>Deluxe</td>
+                <td>2024-10-15</td>
+                <td>2024-10-18</td>
+                <td>Ya</td>
+            </tr>
+            <tr>
+                <td>P002</td>
+                <td>Nuzul Farid</td>
+                <td>Standar</td>
+                <td>2024-10-20</td>
+                <td>2024-10-22</td>
+                <td>Tidak</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
