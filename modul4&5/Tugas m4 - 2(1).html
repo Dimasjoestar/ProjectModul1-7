@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Kamar</title>
+    <script>
+        function validateKamar() {
+            const nomorKamar = document.getElementById("nomor_kamar").value;
+            const tipeKamar = document.getElementById("tipe_kamar").value;
+            const hargaKamar = document.getElementById("harga_kamar").value;
+
+            if (!nomorKamar || isNaN(nomorKamar)) {
+                alert("Nomor kamar harus diisi dengan angka.");
+                return false;
+            }
+            if (!tipeKamar) {
+                alert("Tipe kamar harus diisi.");
+                return false;
+            }
+            if (!hargaKamar || isNaN(hargaKamar)) {
+                alert("Harga kamar harus diisi dengan angka.");
+                return false;
+            }
+
+            alert("Data kamar berhasil ditambahkan.");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Tambah Data Kamar</h2>
+    <form onsubmit="return validateKamar();">
+        <label for="nomor_kamar">Nomor Kamar:</label><br>
+        <input type="text" id="nomor_kamar" name="nomor_kamar" required><br><br>
+
+        <label for="tipe_kamar">Tipe Kamar:</label><br>
+        <input type="text" id="tipe_kamar" name="tipe_kamar" required><br><br>
+
+        <label for="harga_kamar">Harga Kamar:</label><br>
+        <input type="text" id="harga_kamar" name="harga_kamar" required><br><br>
+
+        <button type="submit">Tambah Kamar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perhitungan Gaji</title>
+    <script>
+        function hit() {
+            // Ambil nilai input dari form
+            let golongan = document.forms["form1"]["gol"].value;
+            let jumlahAnak = parseInt(document.forms["form1"]["anak"].value);
+            
+            // Tentukan gaji pokok dan persen tunjangan berdasarkan golongan
+            let gajiPokok;
+            let persenTunjangan;
+
+            switch (golongan) {
+                case "I":
+                    gajiPokok = 250000;
+                    persenTunjangan = 0.05;
+                    break;
+                case "II":
+                    gajiPokok = 300000;
+                    persenTunjangan = 0.10;
+                    break;
+                case "III":
+                    gajiPokok = 350000;
+                    persenTunjangan = 0.15;
+                    break;
+                default:
+                    alert("Pilih golongan yang valid");
+                    return;
+            }
+
+            // Hitung tunjangan dan gaji bersih
+            let tunjangan = (jumlahAnak * gajiPokok) * persenTunjangan;
+            let gajiBersih = gajiPokok + tunjangan;
+
+            // Tampilkan hasil di form
+            document.forms["form1"]["gapok"].value = gajiPokok;
+            document.forms["form1"]["tunjangan"].value = tunjangan;
+            document.forms["form1"]["gaji"].value = gajiBersih;
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <h2>PERHITUNGAN GAJI</h2>
+        
+        <label>Golongan</label>
+        <select name="gol">
+            <option value="I">I</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+        </select><br>
+
+        <label>Jumlah Anak</label>
+        <input type="text" name="anak" size="10" maxlength="10"><br>
+
+        <input type="button" name="hitung" value="Hitung" onClick="hit()">
+        <input type="reset" name="Batal" value="Cancel"><br><br>
+
+        <label>Gaji Pokok</label>
+        <input type="text" name="gapok" readonly><br>
+
+        <label>Tunjangan</label>
+        <input type="text" name="tunjangan" readonly><br>
+
+        <label>Gaji Bersih</label>
+        <input type="text" name="gaji" readonly><br>
+    </form>
+</body>
+</html>

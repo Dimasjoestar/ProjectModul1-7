@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Data Fasilitas</title>
+    <script>
+        function validateFasilitas() {
+            const namaFasilitas = document.getElementById("nama_fasilitas").value;
+            const deskripsiFasilitas = document.getElementById("deskripsi_fasilitas").value;
+
+            if (!namaFasilitas) {
+                alert("Nama fasilitas harus diisi.");
+                return false;
+            }
+            if (!deskripsiFasilitas || deskripsiFasilitas.length < 10) {
+                alert("Deskripsi fasilitas harus diisi dengan minimal 10 karakter.");
+                return false;
+            }
+
+            alert("Data fasilitas berhasil ditambahkan.");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Tambah Data Fasilitas</h2>
+    <form onsubmit="return validateFasilitas();">
+        <label for="nama_fasilitas">Nama Fasilitas:</label><br>
+        <input type="text" id="nama_fasilitas" name="nama_fasilitas" required><br><br>
+
+        <label for="deskripsi_fasilitas">Deskripsi Fasilitas:</label><br>
+        <textarea id="deskripsi_fasilitas" name="deskripsi_fasilitas" required></textarea><br><br>
+
+        <button type="submit">Tambah Fasilitas</button>
+    </form>
+</body>
+</html>

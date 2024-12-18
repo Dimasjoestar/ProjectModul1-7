@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <script>
+        function hitungTotalBayar() {
+            const tipeKamar = document.getElementById("tipe_kamar").value;
+            const durasi = parseInt(document.getElementById("durasi").value);
+            const includeBreakfast = document.getElementById("breakfast").checked;
+
+            let hargaPerMalam;
+            switch (tipeKamar) {
+                case "standar":
+                    hargaPerMalam = 500000;
+                    break;
+                case "deluxe":
+                    hargaPerMalam = 800000;
+                    break;
+                case "family":
+                    hargaPerMalam = 1200000;
+                    break;
+                default:
+                    hargaPerMalam = 0;
+            }
+
+            let total = hargaPerMalam * durasi;
+
+            // Diskon jika lebih dari 3 hari
+            let diskon = 0;
+            if (durasi > 3) {
+                diskon = total * 0.1;
+                total -= diskon;
+            }
+
+            // Tambahan biaya untuk breakfast
+            if (includeBreakfast) {
+                total += 80000;
+            }
+
+            // Menampilkan diskon dan total bayar
+            document.getElementById("diskon").value = diskon;
+            document.getElementById("total_bayar").value = total;
+        }
+
+        function simpanData() {
+            const nama = document.getElementById("nama").value;
+            const jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked').value;
+            const nomorIdentitas = document.getElementById("nomor_identitas").value;
+            const tipeKamar = document.getElementById("tipe_kamar").value;
+            const durasi = document.getElementById("durasi").value;
+            const diskon = document.getElementById("diskon").value;
+            const totalBayar = document.getElementById("total_bayar").value;
+
+            if (!/^\d{16}$/.test(nomorIdentitas)) {
+                alert("Nomor identitas salah, harus 16 digit.");
+                return;
+            }
+
+            if (isNaN(durasi) || durasi <= 0) {
+                alert("Durasi menginap harus berupa angka positif.");
+                return;
+            }
+
+            alert(
+                `Data Pemesanan:\n` +
+                `Nama: ${nama}\n` +
+                `Jenis Kelamin: ${jenisKelamin}\n` +
+                `Nomor Identitas: ${nomorIdentitas}\n` +
+                `Tipe Kamar: ${tipeKamar}\n` +
+                `Durasi Menginap: ${durasi} malam\n` +
+                `Diskon: Rp${diskon}\n` +
+                `Total Bayar: Rp${totalBayar}`
+            );
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Pemesanan</h2>
+    <form onsubmit="event.preventDefault(); hitungTotalBayar(); simpanData();">
+        <label for="nama">Nama Pemesan:</label><br>
+        <input type="text" id="nama" name="nama" required><br><br>
+
+        <label>Jenis Kelamin:</label><br>
+        <input type="radio" id="laki_laki" name="jenis_kelamin" value="Laki-laki" required>
+        <label for="laki_laki">Laki-laki</label>
+        <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan" required>
+        <label for="perempuan">Perempuan</label><br><br>
+
+        <label for="nomor_identitas">Nomor Identitas:</label><br>
+        <input type="text" id="nomor_identitas" name="nomor_identitas" required><br><br>
+
+        <label for="tipe_kamar">Tipe Kamar:</label><br>
+        <select id="tipe_kamar" name="tipe_kamar" required>
+            <option value="standar">Standar</option>
+            <option value="deluxe">Deluxe</option>
+            <option value="family">Family</option>
+        </select><br><br>
+
+        <label for="durasi">Durasi Menginap (malam):</label><br>
+        <input type="number" id="durasi" name="durasi" required><br><br>
+
+        <label for="tanggal_pesan">Tanggal Pesan (dd/mm/yyyy):</label><br>
+        <input type="date" id="tanggal_pesan" name="tanggal_pesan" required><br><br>
+
+        <input type="checkbox" id="breakfast" name="breakfast">
+        <label for="breakfast">Termasuk Breakfast (Rp80,000)</label><br><br>
+
+        <label for="diskon">Diskon:</label><br>
+        <input type="text" id="diskon" name="diskon" readonly><br><br>
+
+        <label for="total_bayar">Total Bayar:</label><br>
+        <input type="text" id="total_bayar" name="total_bayar" readonly><br><br>
+
+        <button type="submit">Simpan</button>
+    </form>
+</body>
+</html>
