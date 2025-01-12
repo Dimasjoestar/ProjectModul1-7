@@ -1,0 +1,95 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero section styles */
+.hero {
+    background-image: url("/assets/images/bghotel.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar styles */
+.navbar-custom {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+}
+
+/* Content section styles */
+.content {
+    padding: 2rem;
+}
+
+/* Table styles */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden; /* To round the corners of the table */
+}
+
+.table-dark {
+    background-color: #343a40; /* Dark background for the table */
+}
+
+.table-dark th,
+.table-dark td {
+    border-top: 1px solid #454d55; /* Lighter border for better visibility */
+}
+
+.table-dark th {
+    color: #ffffff; /* White text for headers */
+}
+
+.table-dark td {
+    color: #e9ecef; /* Light gray text for table data */
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff; /* Primary button color */
+}
+
+.btn-success {
+    background-color: #28a745; /* Success button color */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Danger button color */
+}
+
+/* Hover effects for buttons */
+.btn:hover {
+    opacity: 0.9; /* Slightly transparent on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem; /* Smaller brand name on mobile */
+    }
+
+    .nav-link {
+        font-size: 1rem; /* Smaller link text on mobile */
+    }
+}
